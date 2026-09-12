@@ -40,7 +40,7 @@ Write-Host '  [BETA] GoLiveBypass para Equicord/Vencord — canal beta WireGuard
 Write-Host '         Este instalador entrega a versao beta atual do plugin; resultados podem mudar.' -ForegroundColor DarkGray
 Write-Host '         O sistema ainda nao e estavel e so chega la com gente testando: cada bug reportado' -ForegroundColor DarkGray
 Write-Host '         vira uma issue e encurta o caminho. Se algo falhar, deixe o relatorio automatico' -ForegroundColor DarkGray
-Write-Host '         seguir — ou abra em https://github.com/bezumiya/GoLiveBypass/issues.' -ForegroundColor DarkGray
+Write-Host '         seguir — ou abra em https://github.com/erik848/GoLiveBypassPlugin/issues.' -ForegroundColor DarkGray
 Write-Host '         O standalone continua separado, indisponivel e nao e alterado por este instalador.' -ForegroundColor DarkGray
 Write-Host ''
 
@@ -51,7 +51,7 @@ $ErrorActionPreference = 'Stop'
 # recusado, e nesse caso nao ha o que fazer aqui: o proprio .bat ja abre com -ExecutionPolicy Bypass.
 try { Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force } catch { }
 
-$RepoRaw = 'https://raw.githubusercontent.com/bezumiya/GoLiveBypass/main'
+$RepoRaw = 'https://raw.githubusercontent.com/erik848/GoLiveBypassPlugin/main'
 $PluginFiles = @(
     'goLiveBypass/index.tsx',
     'goLiveBypass/native.ts',
@@ -114,7 +114,7 @@ function Show-Banner {
     Write-Host ''
     Write-Host '  GoLiveBypass' -ForegroundColor Cyan
     Write-Host '  Go Live e camera de volta no Discord' -ForegroundColor DarkGray
-    Write-Host '  https://github.com/bezumiya/GoLiveBypass' -ForegroundColor DarkGray
+    Write-Host '  https://github.com/erik848/GoLiveBypassPlugin' -ForegroundColor DarkGray
     Write-Host ''
 }
 
@@ -1716,7 +1716,7 @@ function Show-MainMenu {
 # SHA-256 contra o asset companion .sha256).
 # -----------------------------------------------------------------------------
 
-$GitHubRepo = 'bezumiya/GoLiveBypass'
+$GitHubRepo = 'erik848/GoLiveBypassPlugin'
 $GitHubApi  = "https://api.github.com/repos/$GitHubRepo"
 
 function Get-LatestBetaHelperAsset {

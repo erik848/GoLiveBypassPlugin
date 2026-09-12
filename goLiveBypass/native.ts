@@ -50,10 +50,10 @@ import {
 import * as proton from "./vpn-proton";
 import { safeDiagnosticDetail } from "./vpn-types";
 
-const PLUGIN_VERSION = "2.0.0-beta.1";
+const PLUGIN_VERSION = "2.0.6-beta-9";
 const PLUGIN_ASSET = "goLiveBypass-vencord.zip";
 const PLUGIN_CHECKSUM_ASSET = `${PLUGIN_ASSET}.sha256`;
-const GITHUB_RELEASES_URL = "https://api.github.com/repos/bezumiya/GoLiveBypass/releases?per_page=20";
+const GITHUB_RELEASES_URL = "https://api.github.com/repos/erik848/GoLiveBypassPlugin/releases?per_page=20";
 const PLUGIN_UPDATE_TIMEOUT_MS = 30_000;
 const UNKNOWN_PLUGIN_VERSION = "unknown";
 const PLUGIN_UPDATE_INTERVAL_MS = 60 * 60 * 1000;

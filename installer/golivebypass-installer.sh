@@ -30,7 +30,7 @@ printf '        Este instalador entrega a versao beta atual do plugin; resultado
 printf '        O sistema ainda nao e estavel e so chega la com gente testando: cada bug\n' >&2
 printf '        reportado vira uma issue e encurta o caminho. Ao falhar, deixe o relatorio\n' >&2
 printf '        automatico seguir, ou abra voce mesmo em\n' >&2
-printf '        https://github.com/bezumiya/GoLiveBypass/issues\n' >&2
+printf '        https://github.com/erik848/GoLiveBypassPlugin/issues\n' >&2
 printf '        No Linux a parte menos testada e a ativacao do tunel, que pede autorizacao\n' >&2
 printf '        no pkexec/polkit — a validacao atual parou nesse ponto.\n' >&2
 printf '        O standalone continua indisponivel e nao e alterado por este instalador.\n\n' >&2
@@ -65,7 +65,7 @@ unset -f _local_probe 2>/dev/null || true
 
 
 
-REPO_RAW="https://raw.githubusercontent.com/bezumiya/GoLiveBypass/main"
+REPO_RAW="https://raw.githubusercontent.com/erik848/GoLiveBypassPlugin/main"
 # Lista completa das fontes do plugin (native.ts: requiredFilesForPlatform). Faltando uma
 # so, o pnpm build do checkout quebra: native.ts importa vpn-controller/vpn-proton/
 # vpn-linux/update-*. Os binarios dos helpers nao vem por aqui — em Linux eles vao
@@ -163,7 +163,7 @@ fail() {
 banner() {
     printf '\n  %sGoLiveBypass%s\n' "$C_CYAN$C_BOLD" "$C_OFF"
     printf '  %sGo Live e camera de volta no Discord%s\n' "$C_DIM" "$C_OFF"
-    printf '  %shttps://github.com/bezumiya/GoLiveBypass%s\n\n' "$C_DIM" "$C_OFF"
+    printf '  %shttps://github.com/erik848/GoLiveBypassPlugin%s\n\n' "$C_DIM" "$C_OFF"
 }
 
 confirm() {
@@ -2127,7 +2127,7 @@ wait_discord_exit() {
 #   3. backup + rollback - restaura versao anterior se a nova quebrar
 # -----------------------------------------------------------------------------
 
-GITHUB_REPO="bezumiya/GoLiveBypass"
+GITHUB_REPO="erik848/GoLiveBypassPlugin"
 # API publica do GitHub: 60 req/h por IP, ok para uso interativo. User-Agent
 # obrigatorio pela RFC 7231; sem ele o GitHub responde 403.
 GITHUB_API="https://api.github.com/repos/$GITHUB_REPO"

@@ -116,6 +116,7 @@ const PLUGIN_UPDATE_STATUS_TIMEOUT_MS = 10_000;
 const PLUGIN_UPDATE_OPERATION_TIMEOUT_MS = 45_000;
 const CUSTOM_WIREGUARD_VALIDATION_TIMEOUT_MS = 30_000;
 const PLUGIN_UPDATE_DEFER_MS = 6 * 60 * 60 * 1_000;
+const PROTON_OPTIMIZATION_STATUS_POLL_INTERVAL_MS = 2_000;
 
 const AUTOMATIC = "";
 const VOICE_KEYS: "voiceRegion"[] = ["voiceRegion"];
@@ -732,7 +733,7 @@ function PluginOnboardingModal({ modalProps, onClosed }: { modalProps: RenderMod
             }
         };
         void refresh();
-        const timer = setInterval(() => void refresh(), 750);
+        const timer = setInterval(() => void refresh(), PROTON_OPTIMIZATION_STATUS_POLL_INTERVAL_MS);
         return () => {
             disposed = true;
             optimizationStatusRequestRef.current++;

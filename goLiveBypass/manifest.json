@@ -7,14 +7,14 @@
       "id": "1366453661970071633"
     }
   ],
-  "version": "2.0.0-beta.1",
+  "version": "2.0.6-beta-9",
   "platforms": [
     "win32",
     "linux"
   ],
   "updater": {
     "type": "github",
-    "id": "bezumiya/GoLiveBypass",
+    "id": "erik848/GoLiveBypassPlugin",
     "assetName": "goLiveBypass-vencord.zip"
   }
 }
