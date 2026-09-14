@@ -6,6 +6,13 @@ segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ## [Unreleased]
 
+## [2.0.6-beta-9] - 2026-09-12
+
+### Plugin
+
+- Reduz a frequência de consulta do estado da otimização Proton de 750 ms para 2 s, diminuindo trabalho recorrente na interface durante a configuração.
+- Atualizações e instaladores do plugin passam a consultar as releases de `erik848/GoLiveBypassPlugin`.
+
 ## [2.0.6-beta-8] - 2026-09-11
 
 ### Plugin: login Proton parava em máquinas sem armazenamento seguro

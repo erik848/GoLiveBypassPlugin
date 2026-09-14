@@ -1519,7 +1519,9 @@ export class PluginVpnController {
             const ok = inspection.active && inspection.owned;
             this.setDiagnostic("wireguard", ok, ok ? "namespace WireGuard próprio confirmado" : inspection.reason || "namespace WireGuard ausente");
             if (!ok) this.options.log("warn", "watchdog Linux observou perda ou troca do túnel", { mode: "diagnostic-only" });
-            if (ok) this.startDiagnostics("watchdog");
+            // A inspeção acima já confirma a saúde do namespace. Provas de
+            // rede e rota são executadas na ativação; repeti-las pelo watchdog
+            // só cria trabalho em segundo plano sem alterar o estado da VPN.
         } finally {
             this.watchdogChecking = false;
         }
@@ -1578,14 +1580,15 @@ export class PluginVpnController {
                     return;
                 }
                 this.options.log("warn", "watchdog ignorou leitura transitória do WireSock", { mode: "diagnostic-only" });
-                this.startDiagnostics("watchdog");
                 return;
             }
             if (!inspection.owned) {
                 this.blockExternal(inspection.reason || "ownership do WireSock mudou");
                 return;
             }
-            this.startDiagnostics("watchdog");
+            // O watchdog só confirma a integridade do túnel. DNS/HTTPS e a
+            // prova de rota ficam restritos à ativação/adoção para não causar
+            // picos periódicos no processo principal do Discord.
         } finally {
             this.watchdogChecking = false;
         }
